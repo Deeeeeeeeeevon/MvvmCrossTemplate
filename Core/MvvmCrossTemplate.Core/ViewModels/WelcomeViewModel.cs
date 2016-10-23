@@ -5,6 +5,6 @@ namespace MvvmCrossTemplate.Core.ViewModels
 {
     public class WelcomeViewModel : BaseViewModel
     {
-        public string WelcomeString => "Text"; //UiStrings.WelcomeString;
+        public string WelcomeString => UiStrings.WelcomeString;
     }
 }

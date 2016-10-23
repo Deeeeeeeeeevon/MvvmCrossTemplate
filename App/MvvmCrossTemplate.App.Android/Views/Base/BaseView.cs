@@ -1,4 +1,5 @@
-﻿using MvvmCross.Droid.Views;
+﻿using Android.OS;
+using MvvmCross.Droid.Views;
 using MvvmCrossTemplate.Core.ViewModels.Base;
 
 namespace MvvmCrossTemplate.Android.Views.Base
@@ -8,14 +9,14 @@ namespace MvvmCrossTemplate.Android.Views.Base
         protected override void OnResume()
         {
             var viewModel = ViewModel as BaseViewModel;
-            viewModel.ViewIsAppearing();
+            viewModel?.ViewIsAppearing();
             base.OnResume();
         }
 
         protected override void OnDestroy()
         {
             var viewModel = ViewModel as BaseViewModel;
-            viewModel.ViewIsDisappearing();
+            viewModel?.ViewIsDisappearing();
             base.OnDestroy();
 
         }
