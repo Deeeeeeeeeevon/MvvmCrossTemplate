@@ -1,11 +1,12 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
+using MvvmCrossTemplate.Android.Views.Base;
+using MvvmCrossTemplate.Core.ViewModels;
 
-namespace MvvmCrossTemplate.Android
+namespace MvvmCrossTemplate.Android.Views
 {
-    [Activity(Label = "MvvmCrossTemplate.Android", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : Activity
+    [Activity(Label = "MvvmCrossTemplate", MainLauncher = true, Icon = "@drawable/icon")]
+    public class WelcomeView : BaseView<WelcomeViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {

@@ -66,7 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builders\ViewModelBuilders\WelcomeViewModelBuilder.cs" />
-    <Compile Include="TestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\ViewModelTests\Base\BaseUnitTest.cs" />
     <Compile Include="UnitTests\ViewModelTests\WelcomeViewModelTests\ConstructorTests.cs" />

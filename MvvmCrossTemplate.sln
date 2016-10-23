@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{56810DFA-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{EA4B3C31-F202-43AD-BCC6-F1254AD1A6A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCrossTemplate.Tests", "App\MvvmCrossTemplate.App.Tests\MvvmCrossTemplate.App.Tests.csproj", "{597BEDA2-735B-455C-AAA0-26A38C4680EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCrossTemplate.App.Tests", "App\MvvmCrossTemplate.App.Tests\MvvmCrossTemplate.App.Tests.csproj", "{597BEDA2-735B-455C-AAA0-26A38C4680EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -236,6 +236,8 @@ Global
 		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.AppStore|x86.Build.0 = Release|x86
 		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.AppStore|x86.Deploy.0 = Release|x86
 		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.Debug|Any CPU.Build.0 = Debug|x86
+		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.Debug|ARM.ActiveCfg = Debug|ARM
 		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.Debug|ARM.Build.0 = Debug|ARM
 		{DA06293A-2ED9-4679-A6FC-E3E8E811553A}.Debug|ARM.Deploy.0 = Debug|ARM
