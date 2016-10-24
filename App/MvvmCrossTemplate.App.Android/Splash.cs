@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using MvvmCross.Droid.Views;
+using MvvmCrossTemplate.Android.Resources;
 
 namespace MvvmCrossTemplate.Android
 {

@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.5.23.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moq.4.5.23\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Binding.4.3.0\lib\net45\MvvmCross.Binding.dll</HintPath>
       <Private>True</Private>
@@ -65,10 +73,24 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\ViewModelBuilders\WelcomeViewModelBuilder.cs" />
+    <Compile Include="Builders\Base\BaseBuilder.cs" />
+    <Compile Include="Builders\Entities\BaseEntityBuilder.cs" />
+    <Compile Include="Builders\Repos\Entities\BaseEntityRepoBuilder.cs" />
+    <Compile Include="Builders\Utils\ErrorBuilder.cs" />
+    <Compile Include="Builders\Utils\ResultBuilder.cs" />
+    <Compile Include="Builders\Utils\ResultOfTypeBuilder.cs" />
+    <Compile Include="Builders\ViewModels\WelcomeViewModelBuilder.cs" />
+    <Compile Include="Helpers\RandomValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTests\ViewModelTests\Base\BaseUnitTest.cs" />
-    <Compile Include="UnitTests\ViewModelTests\WelcomeViewModelTests\ConstructorTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\DeleteAllEntitiesAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\DeleteEntityAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\ExecuteSqlAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\InsertEntityAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadEntitiesBySqlQueryAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadValueBySqlQueryAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\UpdateEntityAsyncTests.cs" />
+    <Compile Include="UnitTests\Base\BaseUnitTest.cs" />
+    <Compile Include="UnitTests\ViewModels\WelcomeViewModel\ConstructorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvvmCrossTemplate.Core\MvvmCrossTemplate.Core.csproj">
@@ -79,6 +101,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

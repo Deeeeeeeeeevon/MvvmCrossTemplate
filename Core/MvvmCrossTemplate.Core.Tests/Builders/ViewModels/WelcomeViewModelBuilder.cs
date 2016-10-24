@@ -1,6 +1,6 @@
 ﻿using MvvmCrossTemplate.Core.ViewModels;
 
-namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModelBuilders
+namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModels
 {
     public class WelcomeViewModelBuilder
     {

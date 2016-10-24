@@ -1,9 +1,9 @@
 ﻿using MvvmCrossTemplate.Core.Resources;
-using MvvmCrossTemplate.Core.Tests.Builders.ViewModelBuilders;
-using MvvmCrossTemplate.Core.Tests.UnitTests.ViewModelTests.Base;
+using MvvmCrossTemplate.Core.Tests.Builders.ViewModels;
+using MvvmCrossTemplate.Core.Tests.UnitTests.Base;
 using NUnit.Framework;
 
-namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModelTests.WelcomeViewModelTests
+namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.WelcomeViewModel
 {
     [TestFixture]
     public class ConstructorTests : BaseUnitTest

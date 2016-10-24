@@ -11,7 +11,7 @@
 
 [assembly: global::Android.Runtime.ResourceDesignerAttribute("MvvmCrossTemplate.Android.Resource", IsApplication=true)]
 
-namespace MvvmCrossTemplate.Android
+namespace MvvmCrossTemplate.Android.Resources
 {
 	
 	
@@ -26,29 +26,31 @@ namespace MvvmCrossTemplate.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxBind = global::MvvmCrossTemplate.Android.Resource.Attribute.MvxBind;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxDropDownItemTemplate = global::MvvmCrossTemplate.Android.Resource.Attribute.MvxDropDownItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxGroupItemTemplate = global::MvvmCrossTemplate.Android.Resource.Attribute.MvxGroupItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxItemTemplate = global::MvvmCrossTemplate.Android.Resource.Attribute.MvxItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxLang = global::MvvmCrossTemplate.Android.Resource.Attribute.MvxLang;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxSource = global::MvvmCrossTemplate.Android.Resource.Attribute.MvxSource;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxTemplate = global::MvvmCrossTemplate.Android.Resource.Attribute.MvxTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Id.MvvmCrossTagId = global::MvvmCrossTemplate.Android.Resource.Id.MvvmCrossTagId;
-			global::MvvmCross.Binding.Droid.Resource.Id.MvxBindingTagUnique = global::MvvmCrossTemplate.Android.Resource.Id.MvxBindingTagUnique;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxBinding;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxBind = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxBinding_MvxBind;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxLang = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxBinding_MvxLang;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxControl;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxControl_MvxTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxExpandableListView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxImageView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxImageView_MvxSource;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxListView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxListView_MvxItemTemplate;
-			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resource.String.ApplicationName;
-			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resource.String.Hello;
+			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxBind = global::MvvmCrossTemplate.Android.Resources.Resource.Attribute.MvxBind;
+			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxDropDownItemTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Attribute.MvxDropDownItemTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxGroupItemTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Attribute.MvxGroupItemTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxItemTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Attribute.MvxItemTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxLang = global::MvvmCrossTemplate.Android.Resources.Resource.Attribute.MvxLang;
+			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxSource = global::MvvmCrossTemplate.Android.Resources.Resource.Attribute.MvxSource;
+			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Attribute.MvxTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Id.MvvmCrossTagId = global::MvvmCrossTemplate.Android.Resources.Resource.Id.MvvmCrossTagId;
+			global::MvvmCross.Binding.Droid.Resource.Id.MvxBindingTagUnique = global::MvvmCrossTemplate.Android.Resources.Resource.Id.MvxBindingTagUnique;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxBinding;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxBind = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxBinding_MvxBind;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxLang = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxBinding_MvxLang;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxControl;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxControl_MvxTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxExpandableListView;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxImageView;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxImageView_MvxSource;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxListView;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MvvmCrossTemplate.Android.Resources.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resources.Resource.String.ApplicationName;
+			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resources.Resource.String.Hello;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resources.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resources.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
