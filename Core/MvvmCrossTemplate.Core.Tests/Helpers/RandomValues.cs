@@ -1,4 +1,6 @@
 ﻿using System;
+using MvvmCrossTemplate.Core.Tests.Builders.Utils;
+using MvvmCrossTemplate.Core.Utils;
 using Ploeh.AutoFixture;
 
 namespace MvvmCrossTemplate.Core.Tests.Helpers
@@ -19,5 +21,7 @@ namespace MvvmCrossTemplate.Core.Tests.Helpers
         internal static DateTime DateTime => MyFixture.Create<DateTime>();
         internal static decimal Decimal => MyFixture.Create<decimal>();
         internal static string Email => String + "@" + String + "." + String;
+        public static string Guid => System.Guid.NewGuid().ToString();
+        public static EntityId EntityId => new EntityIdBuilder().Create();
     }
 }

@@ -9,10 +9,9 @@ namespace MvvmCrossTemplate.Core.Interfaces.Repos.EntityRepos.Base
     {
         string TableName { get; }
 
-        Task<Result<TEntity>> InsertEntityAsync(TEntity entity);
-        Task<Result<TEntity>> UpdateEntityAsync(TEntity entity);
-        Task<Result> DeleteEntityAsync(TEntity entitytoDelete);
-        Task<Result> DeleteAllEntitiesAsync();
+        Task<Result<TEntity>> LoadEntityAsync(EntityId entityId);
+        Task<Result<TEntity>> SaveEntityAsync(TEntity entityToSave);
+
         Task<Result<List<TEntity>>> LoadEntitiesBySqlQueryAsync(string sql);
         Task<Result<T>> LoadValueBySqlQueryAsync<T>(string sql);
         Task<Result> ExecuteSqlAsync(string sql);

@@ -39,9 +39,9 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.EntityRepos.BaseEntityRep
         public async Task WHEN_DatabaseService_succeeds_SHOULD_return_Success_Result()
         {
             //Arrange
-            Result<List<BaseEntity>> databaseServiceResult = new ResultOfTypeBuilder<List<BaseEntity>>()
+            var databaseServiceResult = new ResultOfTypeBuilder<List<BaseEntity>>()
                 .With_IsSuccess(true)
-                .With_Value(new BaseEntityBuilder().With_Id(123).CreateAsList())
+                .With_Value(new BaseEntityBuilder().With_EntityId(new EntityId(123)).CreateList(1))
                 .Create();
             var sut = new BaseEntityRepoBuilder()
                 .Where_DatabaseService_LoadEntitiesBySqlQueryAsync_returns(databaseServiceResult)
@@ -52,7 +52,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.EntityRepos.BaseEntityRep
 
             //Assert
             Assert.That(result.IsSuccess);
-            Assert.That(result.Value[0].Id, Is.EqualTo(123));
+            Assert.That(result.Value[0].ObjectId, Is.EqualTo(123));
         }
     }
 }

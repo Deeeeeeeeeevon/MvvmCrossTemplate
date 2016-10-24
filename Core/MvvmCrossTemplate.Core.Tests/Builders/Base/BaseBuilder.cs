@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Moq;
+using MvvmCrossTemplate.Core.Entities;
 using MvvmCrossTemplate.Core.Entities.Base;
+using MvvmCrossTemplate.Core.Interfaces.Repos.EntityRepos;
 using MvvmCrossTemplate.Core.Interfaces.Services;
 using MvvmCrossTemplate.Core.Utils;
 using static MvvmCrossTemplate.Core.Tests.Helpers.RandomValues;
@@ -12,11 +14,12 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Base
         protected BaseBuilder()
         {
             SetupMockDatabaseService();
+            SetupMockUserEntityRepo();
         }
 
         public abstract T Create();
 
-        public List<T> CreateAsList(int numberToCreate = 3)
+        public List<T> CreateList(int numberToCreate = 3)
         {
             var list = new List<T>();
             for (int i = 0; i < numberToCreate; i++)
@@ -83,6 +86,30 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Base
         public BaseBuilder<T> Where_databaseservice_DeleteAllAsync_returns<TEntity>(Result result)
         {
             MockDatabaseService.Setup(x => x.DeleteAllAsync<TEntity>()).ReturnsAsync(result);
+            return this;
+        }
+        #endregion
+
+        #region UserEntityRepo
+
+        public Mock<IUserEntityRepo> MockUserEntityRepo { get; private set; }
+
+        private void SetupMockUserEntityRepo()
+        {
+            MockUserEntityRepo = new Mock<IUserEntityRepo>();
+            MockUserEntityRepo.Setup(x => x.LoadEntityAsync(It.IsAny<EntityId>())).ReturnsAsync(Result.Ok(new UserEntity()));
+            MockUserEntityRepo.Setup(x => x.SaveEntityAsync(It.IsAny<UserEntity>())).ReturnsAsync(Result.Ok(new UserEntity()));
+        }
+
+        public BaseBuilder<T> Where_UserEntityRepo_LoadEntityAsync_returns(Result<UserEntity> result)
+        {
+            MockUserEntityRepo.Setup(x => x.LoadEntityAsync(It.IsAny<EntityId>())).ReturnsAsync(result);
+            return this;
+        }
+        
+        public BaseBuilder<T> Where_UserEntityRepo_SaveEntityAsync_returns(Result<UserEntity> result)
+        {
+            MockUserEntityRepo.Setup(x => x.SaveEntityAsync(It.IsAny<UserEntity>())).ReturnsAsync(result);
             return this;
         }
         #endregion

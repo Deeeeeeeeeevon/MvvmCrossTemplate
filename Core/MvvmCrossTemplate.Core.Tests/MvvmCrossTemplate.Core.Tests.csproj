@@ -75,21 +75,28 @@
   <ItemGroup>
     <Compile Include="Builders\Base\BaseBuilder.cs" />
     <Compile Include="Builders\Entities\BaseEntityBuilder.cs" />
+    <Compile Include="Builders\Entities\UserEntityBuilder.cs" />
+    <Compile Include="Builders\Models\User\PersonalDetailsBuilder.cs" />
+    <Compile Include="Builders\Models\User\UserModelBuilder.cs" />
     <Compile Include="Builders\Repos\Entities\BaseEntityRepoBuilder.cs" />
+    <Compile Include="Builders\Repos\Models\UserModelRepoBuilder.cs" />
+    <Compile Include="Builders\Utils\EntityIdBuilder.cs" />
     <Compile Include="Builders\Utils\ErrorBuilder.cs" />
     <Compile Include="Builders\Utils\ResultBuilder.cs" />
     <Compile Include="Builders\Utils\ResultOfTypeBuilder.cs" />
     <Compile Include="Builders\ViewModels\WelcomeViewModelBuilder.cs" />
     <Compile Include="Helpers\RandomValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\DeleteAllEntitiesAsyncTests.cs" />
-    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\DeleteEntityAsyncTests.cs" />
+    <Compile Include="UnitTests\Entities\UserEntity\InitialiseFromUserModelTests.cs" />
+    <Compile Include="UnitTests\Entities\UserEntity\UpdateFromUserModelTests.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\ExecuteSqlAsyncTests.cs" />
-    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\InsertEntityAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadEntitiesBySqlQueryAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadEntityAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadValueBySqlQueryAsyncTests.cs" />
-    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\UpdateEntityAsyncTests.cs" />
     <Compile Include="UnitTests\Base\BaseUnitTest.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\SaveEntityAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\LoadUserModelAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\SaveUserModelAsyncTests.cs" />
     <Compile Include="UnitTests\ViewModels\WelcomeViewModel\ConstructorTests.cs" />
   </ItemGroup>
   <ItemGroup>

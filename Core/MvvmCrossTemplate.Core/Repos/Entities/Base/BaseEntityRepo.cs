@@ -1,9 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using MvvmCrossTemplate.Core.Entities.Base;
+using MvvmCrossTemplate.Core.Extensions;
 using MvvmCrossTemplate.Core.Interfaces.Repos.EntityRepos.Base;
 using MvvmCrossTemplate.Core.Interfaces.Services;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.Utils.Enums;
 
 namespace MvvmCrossTemplate.Core.Repos.Entities.Base
 {
@@ -19,20 +24,55 @@ namespace MvvmCrossTemplate.Core.Repos.Entities.Base
             DatabaseService.CreateTable<TEntity>();
         }
 
-        public async Task<Result<TEntity>> InsertEntityAsync(TEntity entity)
+        public async Task<Result<TEntity>> LoadEntityAsync(EntityId entityId)
         {
-            Result<TEntity> result = await DatabaseService.InsertAsync(entity);
-            return result.IsSuccess
-                ? Result.Ok(result.Value)
-                : Result.Fail<TEntity>(this, result);
+            if (entityId.IsEmpty())
+            {
+                return Result.Fail<TEntity>(this, ErrorType.NotFound);
+            }
+            var sqlQuery = new StringBuilder();
+            sqlQuery.Append("SELECT * FROM ").Append(TableName).Append(" WHERE");
+            if (entityId.LocalId > 0)
+                sqlQuery.Append(" Id = ").Append(entityId.LocalId).Append(" OR");
+            if (entityId.ObjectId > 0)
+                sqlQuery.Append(" ObjectId = ").Append(entityId.ObjectId).Append(" OR");
+            if (entityId.UniqueId != "")
+                sqlQuery.Append(" UniqueId = \'").Append(entityId.UniqueId).Append("\'").Append(" OR");
+            sqlQuery.Length -= 3;
+
+            Result<List<TEntity>> result = await DatabaseService.LoadEntitiesBySqlQueryAsync<TEntity>(sqlQuery.ToString());
+            if (result.IsFailure)
+            {
+                return Result.Fail<TEntity>(this, result);
+            }
+            if (result.Value.Count > 1)
+            {
+                return Result.Fail<TEntity>(this, ErrorType.DuplicateResults).AddData("entityId", entityId.FullId);
+            }
+            if (result.Value.Count == 0)
+            {
+                return Result.Fail<TEntity>(this, ErrorType.NotFound).AddData("entityId", entityId.FullId);
+            }
+            return Result.Ok(result.Value.First());
         }
 
-        public async Task<Result<TEntity>> UpdateEntityAsync(TEntity entity)
+        public async Task<Result<TEntity>> SaveEntityAsync(TEntity entityToSave)
         {
-            Result<TEntity> result = await DatabaseService.UpdateAsync(entity);
-            return result.IsSuccess
-                ? Result.Ok(result.Value)
-                : Result.Fail<TEntity>(this, result);
+            Result<TEntity> loadResult = await LoadEntityAsync(entityToSave.EntityId);
+
+            if (loadResult.IsFailure)
+            {
+                if (entityToSave.EntityId.IsEmpty())
+                {
+                    entityToSave.UniqueId = Guid.NewGuid().ToString();
+                }
+                Result<TEntity> insertResult = await DatabaseService.InsertAsync(entityToSave);
+                return Result.Return(this, insertResult);
+            }
+
+            entityToSave.LocalId = loadResult.Value.LocalId;
+            Result<TEntity> updateResult = await DatabaseService.UpdateAsync(entityToSave);
+            return Result.Return(this, updateResult);
         }
 
         public async Task<Result<List<TEntity>>> LoadEntitiesBySqlQueryAsync(string sql)
@@ -58,21 +98,6 @@ namespace MvvmCrossTemplate.Core.Repos.Entities.Base
                 ? Result.Ok()
                 : Result.Fail(this, result);
         }
-
-        public async Task<Result> DeleteEntityAsync(TEntity entity)
-        {
-            Result result = await DatabaseService.DeleteAsync<TEntity>(entity.Id);
-            return result.IsSuccess
-                ? Result.Ok()
-                : Result.Fail(this, result);
-        }
-
-        public async Task<Result> DeleteAllEntitiesAsync()
-        {
-            Result result = await DatabaseService.DeleteAllAsync<TEntity>();
-            return result.IsSuccess
-                ? Result.Ok()
-                : Result.Fail(this, result);
-        }
+        
     }
 }

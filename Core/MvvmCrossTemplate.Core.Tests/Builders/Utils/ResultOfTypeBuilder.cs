@@ -26,10 +26,10 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Utils
             return this;
         }
 
-        public ResultOfTypeBuilder<T> With_Error(Error errorMessage)
+        public ResultOfTypeBuilder<T> With_Error(Error error)
         {
             _isSuccess = false;
-            _error = errorMessage;
+            _error = error;
             return this;
         }
 

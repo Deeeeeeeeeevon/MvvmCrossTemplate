@@ -13,7 +13,9 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Entities
         {
             _baseEntity = new BaseEntity
             {
-                Id = RandomValues.Long
+                LocalId = RandomValues.Long,
+                ObjectId = RandomValues.Long,
+                UniqueId = RandomValues.Guid
             };
         }
 
@@ -21,12 +23,14 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Entities
         {
             return _baseEntity;
         }
-
-        public BaseEntityBuilder With_Id(long id)
+        
+        public BaseEntityBuilder With_EntityId(EntityId entityId)
         {
-            _baseEntity.Id = id;
+            _baseEntity.LocalId = entityId.LocalId;
+            _baseEntity.ObjectId = entityId.ObjectId;
+            _baseEntity.UniqueId = entityId.UniqueId;
             return this;
         }
-
+        
     }
 }
