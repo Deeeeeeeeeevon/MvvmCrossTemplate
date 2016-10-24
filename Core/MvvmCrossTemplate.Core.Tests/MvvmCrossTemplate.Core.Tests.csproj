@@ -84,6 +84,7 @@
     <Compile Include="Builders\Utils\ErrorBuilder.cs" />
     <Compile Include="Builders\Utils\ResultBuilder.cs" />
     <Compile Include="Builders\Utils\ResultOfTypeBuilder.cs" />
+    <Compile Include="Builders\ViewModels\BaseViewModelBuilder.cs" />
     <Compile Include="Builders\ViewModels\WelcomeViewModelBuilder.cs" />
     <Compile Include="Helpers\RandomValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +98,12 @@
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\SaveEntityAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\LoadUserModelAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\SaveUserModelAsyncTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\IsBusyTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\FinishLoadingTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\StartLoadingTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsActiveTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsAppearingTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsDisappearingTests.cs" />
     <Compile Include="UnitTests\ViewModels\WelcomeViewModel\ConstructorTests.cs" />
   </ItemGroup>
   <ItemGroup>

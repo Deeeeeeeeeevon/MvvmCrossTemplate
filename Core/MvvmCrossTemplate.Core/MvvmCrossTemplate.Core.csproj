@@ -58,11 +58,13 @@
       <DependentUpon>UiStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\DatabaseService.cs" />
+    <Compile Include="Utils\Attributes\ViewElement.cs" />
     <Compile Include="Utils\EntityId.cs" />
     <Compile Include="Utils\Enums\ErrorType.cs" />
     <Compile Include="Utils\Error.cs" />
     <Compile Include="Utils\Result.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\User\ListUsersViewModel.cs" />
     <Compile Include="ViewModels\WelcomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
