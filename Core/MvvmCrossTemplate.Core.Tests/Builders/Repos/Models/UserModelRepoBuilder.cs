@@ -1,4 +1,5 @@
-﻿using MvvmCrossTemplate.Core.Entities;
+﻿using System.Collections.Generic;
+using MvvmCrossTemplate.Core.Entities;
 using MvvmCrossTemplate.Core.Interfaces.Repos.ModelRepos;
 using MvvmCrossTemplate.Core.Repos.Models;
 using MvvmCrossTemplate.Core.Tests.Builders.Base;

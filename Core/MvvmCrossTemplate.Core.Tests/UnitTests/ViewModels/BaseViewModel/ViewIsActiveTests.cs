@@ -20,7 +20,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
 
             //Assert
             Assert.That(sut.IsBusy, Is.False);
-            Assert.That(sut.ViewStillActiveToken.IsCancellationRequested, Is.False);
+            Assert.That(sut.ViewStillActiveTokenSource.IsCancellationRequested, Is.False);
             Assert.That(result, Is.True);
         }
 
@@ -37,7 +37,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
 
             //Assert
             Assert.That(sut.IsBusy, Is.False);
-            Assert.That(sut.ViewStillActiveToken.IsCancellationRequested, Is.True);
+            Assert.That(sut.ViewStillActiveTokenSource.IsCancellationRequested, Is.True);
             Assert.That(result, Is.False);
         }
 
@@ -53,7 +53,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
 
             //Assert
             Assert.That(sut.IsBusy, Is.True);
-            Assert.That(sut.ViewStillActiveToken.IsCancellationRequested, Is.False);
+            Assert.That(sut.ViewStillActiveTokenSource.IsCancellationRequested, Is.False);
             Assert.That(result, Is.False);
         }
 
@@ -70,7 +70,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
 
             //Assert
             Assert.That(sut.IsBusy, Is.True);
-            Assert.That(sut.ViewStillActiveToken.IsCancellationRequested, Is.True);
+            Assert.That(sut.ViewStillActiveTokenSource.IsCancellationRequested, Is.True);
             Assert.That(result, Is.False);
         }
     }

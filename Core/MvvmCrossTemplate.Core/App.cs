@@ -1,6 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.IoC;
-using MvvmCrossTemplate.Core.ViewModels;
+using MvvmCrossTemplate.Core.ViewModels.User;
 
 namespace MvvmCrossTemplate.Core
 {
@@ -9,8 +9,8 @@ namespace MvvmCrossTemplate.Core
         public override void Initialize()
         {
             CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
-
-            RegisterAppStart<WelcomeViewModel>();
+            CreatableTypes().EndingWith("Repo").AsInterfaces().RegisterAsLazySingleton();
+            RegisterAppStart<ListUsersViewModel>();
         }
 
     }

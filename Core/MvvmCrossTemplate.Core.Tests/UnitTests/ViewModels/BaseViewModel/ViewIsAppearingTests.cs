@@ -17,7 +17,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
             sut.ViewIsAppearing();
 
             //Assert
-            Assert.That(sut.ViewStillActiveToken, Is.Not.Null);
+            Assert.That(sut.ViewStillActiveTokenSource, Is.Not.Null);
         }
     }
 }

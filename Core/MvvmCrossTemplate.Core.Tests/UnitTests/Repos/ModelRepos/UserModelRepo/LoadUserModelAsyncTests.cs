@@ -27,7 +27,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
                 .Create();
 
             //Act
-            var result = await sut.LoadUserModelAsync(RandomValues.EntityId);
+            var result = await sut.LoadUserModelAsync(CancelToken, RandomValues.EntityId);
 
             //Assert
             Assert.That(result.IsFailure);
@@ -43,7 +43,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
                 .Create();
 
             //Act
-            var result = await sut.LoadUserModelAsync(RandomValues.EntityId);
+            var result = await sut.LoadUserModelAsync(CancelToken, RandomValues.EntityId);
 
             //Assert
             Assert.That(result.Value.EntityId.UniqueId, Is.EqualTo(""));
@@ -61,7 +61,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
                 .Create();
 
             //Act
-            var result = await sut.LoadUserModelAsync(RandomValues.EntityId);
+            var result = await sut.LoadUserModelAsync(CancelToken, RandomValues.EntityId);
 
             //Assert
             Assert.That(result.Value.EntityId, Is.EqualTo(userEntity.EntityId));
@@ -77,7 +77,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
                 .Create();
 
             //Act
-            var result = await sut.LoadUserModelAsync(RandomValues.EntityId);
+            var result = await sut.LoadUserModelAsync(CancelToken, RandomValues.EntityId);
 
             //Assert
             Assert.That(result.Value.PersonalDetails.FirstName, Is.EqualTo("bob"));
@@ -93,10 +93,24 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
                 .Create();
 
             //Act
-            var result = await sut.LoadUserModelAsync(RandomValues.EntityId);
+            var result = await sut.LoadUserModelAsync(CancelToken, RandomValues.EntityId);
 
             //Assert
             Assert.That(result.Value.PersonalDetails.LastName, Is.EqualTo("freever"));
+        }
+
+        [Test]
+        public async Task WHEN_token_is_cancelled_SHOULD_return_Cancel_error()
+        {
+            //Arrange
+            var sut = new UserModelRepoBuilder().Create();
+            TestCancellationTokenSource.Cancel();
+
+            //Act
+            var result = await sut.LoadUserModelAsync(CancelToken, RandomValues.EntityId);
+
+            //Assert
+            Assert.That(result.Error.ErrorType, Is.EqualTo(ErrorType.Cancelled));
         }
     }
 }

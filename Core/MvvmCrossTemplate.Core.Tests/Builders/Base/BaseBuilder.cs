@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using Moq;
 using MvvmCrossTemplate.Core.Entities;
 using MvvmCrossTemplate.Core.Entities.Base;
+using MvvmCrossTemplate.Core.Interfaces.Models.User;
 using MvvmCrossTemplate.Core.Interfaces.Repos.EntityRepos;
+using MvvmCrossTemplate.Core.Interfaces.Repos.ModelRepos;
 using MvvmCrossTemplate.Core.Interfaces.Services;
+using MvvmCrossTemplate.Core.Models.User;
 using MvvmCrossTemplate.Core.Utils;
 using static MvvmCrossTemplate.Core.Tests.Helpers.RandomValues;
 
@@ -15,6 +19,7 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Base
         {
             SetupMockDatabaseService();
             SetupMockUserEntityRepo();
+            SetupMockUserModelRepo();
         }
 
         public abstract T Create();
@@ -46,7 +51,7 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Base
             MockDatabaseService.Setup(x => x.DeleteAsync<T>(It.IsAny<long>())).ReturnsAsync(Result.Ok());
             MockDatabaseService.Setup(x => x.DeleteAllAsync<T>()).ReturnsAsync(Result.Ok());
         }
-
+        
         public BaseBuilder<T> Where_DatabaseService_InsertAsync_returns<TEntity>(Result<TEntity> result)
         {
             MockDatabaseService.Setup(x => x.InsertAsync(It.IsAny<TEntity>())).ReturnsAsync(result);
@@ -99,6 +104,13 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Base
             MockUserEntityRepo = new Mock<IUserEntityRepo>();
             MockUserEntityRepo.Setup(x => x.LoadEntityAsync(It.IsAny<EntityId>())).ReturnsAsync(Result.Ok(new UserEntity()));
             MockUserEntityRepo.Setup(x => x.SaveEntityAsync(It.IsAny<UserEntity>())).ReturnsAsync(Result.Ok(new UserEntity()));
+            MockUserEntityRepo.Setup(x => x.LoadAllEntitiesAsync()).ReturnsAsync(Result.Ok(new List<UserEntity>()));
+        }
+
+        public BaseBuilder<T> Where_UserEntityRepo_LoadAllEntitiesAsync_returns(Result<List<UserEntity>> result)
+        {
+            MockUserEntityRepo.Setup(x => x.LoadAllEntitiesAsync()).ReturnsAsync(result);
+            return this;
         }
 
         public BaseBuilder<T> Where_UserEntityRepo_LoadEntityAsync_returns(Result<UserEntity> result)
@@ -112,6 +124,24 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Base
             MockUserEntityRepo.Setup(x => x.SaveEntityAsync(It.IsAny<UserEntity>())).ReturnsAsync(result);
             return this;
         }
+        #endregion
+
+        #region UserModelRepo
+
+        public Mock<IUserModelRepo> MockUserModelRepo { get; protected set; }
+
+        private void SetupMockUserModelRepo()
+        {
+            MockUserModelRepo = new Mock<IUserModelRepo>();
+            MockUserModelRepo.Setup(x => x.LoadAllUserModelsAsync(It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new List<IUserModel>()));
+        }
+
+        public BaseBuilder<T> Where_UserModelRepo_LoadAllUserModelsAsync_returns(Result<List<IUserModel>> result)
+        {
+            MockUserModelRepo.Setup(x => x.LoadAllUserModelsAsync(It.IsAny<CancellationToken>())).ReturnsAsync(result);
+            return this;
+        }
+
         #endregion
     }
 }

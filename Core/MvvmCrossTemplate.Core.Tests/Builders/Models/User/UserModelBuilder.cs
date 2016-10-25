@@ -1,4 +1,6 @@
-﻿using MvvmCrossTemplate.Core.Interfaces.Models.User;
+﻿using System.Collections.Generic;
+using Moq;
+using MvvmCrossTemplate.Core.Interfaces.Models.User;
 using MvvmCrossTemplate.Core.Models.User;
 using MvvmCrossTemplate.Core.Tests.Builders.Base;
 using MvvmCrossTemplate.Core.Tests.Builders.Utils;
@@ -10,9 +12,11 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Models.User
     {
         private IPersonalDetails _personalDetails;
         private EntityId _entityId;
+        public Mock<IUserModel> MockUserModel;
 
         public UserModelBuilder()
         {
+            MockUserModel = new Mock<IUserModel>();
             _personalDetails = new PersonalDetailsBuilder().CreateMock();
             _entityId = new EntityIdBuilder().Create();
         }
@@ -32,6 +36,13 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Models.User
         {
             _entityId = entityId;
             return this;
+        }
+
+        public IUserModel CreateMock()
+        {
+            MockUserModel.SetupGet(x => x.EntityId).Returns(_entityId);
+            MockUserModel.SetupGet(x => x.PersonalDetails).Returns(_personalDetails);
+            return MockUserModel.Object;
         }
     }
 }

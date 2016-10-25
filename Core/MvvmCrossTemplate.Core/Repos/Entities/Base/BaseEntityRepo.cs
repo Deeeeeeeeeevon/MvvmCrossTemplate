@@ -15,6 +15,7 @@ namespace MvvmCrossTemplate.Core.Repos.Entities.Base
     public class BaseEntityRepo<TEntity> : IBaseEntityRepo<TEntity> where TEntity : BaseEntity, new()
     {
         public string TableName { get; }
+
         protected readonly IDatabaseService DatabaseService;
 
         public BaseEntityRepo(IDatabaseService databaseService)
@@ -81,6 +82,16 @@ namespace MvvmCrossTemplate.Core.Repos.Entities.Base
             return result.IsSuccess
                 ? Result.Ok(result.Value)
                 : Result.Fail<List<TEntity>>(this, result);
+        }
+
+        public async Task<Result<List<TEntity>>> LoadAllEntitiesAsync()
+        {
+            var sql = new StringBuilder();
+            sql.Append("SELECT * FROM ").Append(TableName);
+            var loadEntitiesResult = await DatabaseService.LoadEntitiesBySqlQueryAsync<TEntity>(sql.ToString());
+            return loadEntitiesResult.IsFailure 
+                ? Result.Fail<List<TEntity>>(this, loadEntitiesResult) 
+                : Result.Ok(loadEntitiesResult.Value);
         }
 
         public async Task<Result<T>> LoadValueBySqlQueryAsync<T>(string sql)

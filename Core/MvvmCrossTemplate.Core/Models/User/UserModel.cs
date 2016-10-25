@@ -1,5 +1,4 @@
-﻿using MvvmCrossTemplate.Core.Interfaces.Models;
-using MvvmCrossTemplate.Core.Interfaces.Models.User;
+﻿using MvvmCrossTemplate.Core.Interfaces.Models.User;
 using MvvmCrossTemplate.Core.Utils;
 
 namespace MvvmCrossTemplate.Core.Models.User

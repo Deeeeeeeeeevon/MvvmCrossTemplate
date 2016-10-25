@@ -13,6 +13,7 @@ namespace MvvmCrossTemplate.Core.Interfaces.Repos.EntityRepos.Base
         Task<Result<TEntity>> SaveEntityAsync(TEntity entityToSave);
 
         Task<Result<List<TEntity>>> LoadEntitiesBySqlQueryAsync(string sql);
+        Task<Result<List<TEntity>>> LoadAllEntitiesAsync();
         Task<Result<T>> LoadValueBySqlQueryAsync<T>(string sql);
         Task<Result> ExecuteSqlAsync(string sql);
     }

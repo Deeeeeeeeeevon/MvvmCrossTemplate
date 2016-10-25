@@ -16,13 +16,13 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
             sut.ViewIsAppearing();
 
             //Pretest
-            Assert.That(sut.ViewStillActiveToken.IsCancellationRequested, Is.False);
+            Assert.That(sut.ViewStillActiveTokenSource.IsCancellationRequested, Is.False);
 
             //Act
             sut.ViewIsDisappearing();
 
             //Assert
-            Assert.That(sut.ViewStillActiveToken.IsCancellationRequested, Is.True);
+            Assert.That(sut.ViewStillActiveTokenSource.IsCancellationRequested, Is.True);
         }
     }
 }

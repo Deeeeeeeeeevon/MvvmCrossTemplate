@@ -14,7 +14,7 @@ namespace MvvmCrossTemplate.Core.ViewModels.Base
     {
         protected BaseViewModel()
         {
-            ViewStillActiveToken = new CancellationTokenSource();
+            ViewStillActiveTokenSource = new CancellationTokenSource();
         }
 
         #region LifeCycle Management
@@ -22,9 +22,10 @@ namespace MvvmCrossTemplate.Core.ViewModels.Base
         private bool _isBusy;
 
         public virtual bool ViewIsActive
-            => !ViewStillActiveToken.IsCancellationRequested && IsNotBusy;
+            => !ViewStillActiveTokenSource.IsCancellationRequested && IsNotBusy;
 
-        public CancellationTokenSource ViewStillActiveToken { get; protected set; }
+        public CancellationTokenSource ViewStillActiveTokenSource { get; protected set; }
+        protected CancellationToken ViewStillActiveToken => ViewStillActiveTokenSource.Token;
 
         [ViewElement]
         public bool IsBusy
@@ -43,12 +44,12 @@ namespace MvvmCrossTemplate.Core.ViewModels.Base
 
         public void ViewIsAppearing()
         {
-            ViewStillActiveToken = new CancellationTokenSource();
+            ViewStillActiveTokenSource = new CancellationTokenSource();
         }
 
         public void ViewIsDisappearing()
         {
-            ViewStillActiveToken.Cancel();
+            ViewStillActiveTokenSource.Cancel();
         }
 
         public virtual void StartLoading()

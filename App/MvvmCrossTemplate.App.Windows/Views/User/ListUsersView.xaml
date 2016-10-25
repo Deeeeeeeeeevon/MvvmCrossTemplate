@@ -1,5 +1,5 @@
 ﻿<base:BaseView
-    x:Class="MvvmCrossTemplate.Windows.Views.WelcomeView"
+    x:Class="MvvmCrossTemplate.Windows.Views.User.ListUsersView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,7 +8,8 @@
     mc:Ignorable="d">
 
     <ListView Background="White">
-        <TextBlock Margin="10,80,0,0" Text="{Binding WelcomeString}"/>
+        <TextBlock Margin="10,80,0,0" Text="Current Users:"/>
+        <ListView ItemsSource="{Binding UserList}" Margin="10,110,-30,-90" />
     </ListView>
 
 </base:BaseView>

@@ -89,18 +89,21 @@
     <Compile Include="Builders\Utils\ResultBuilder.cs" />
     <Compile Include="Builders\Utils\ResultOfTypeBuilder.cs" />
     <Compile Include="Builders\ViewModels\BaseViewModelBuilder.cs" />
-    <Compile Include="Builders\ViewModels\WelcomeViewModelBuilder.cs" />
+    <Compile Include="Builders\ViewModels\User\ListUsersViewModelBuilder.cs" />
+    <Compile Include="Builders\ViewModels\User\ViewElements\UserListItemViewElementBuilder.cs" />
     <Compile Include="Helpers\MockMvxViewDispatcher.cs" />
     <Compile Include="Helpers\RandomValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\Entities\UserEntity\InitialiseFromUserModelTests.cs" />
     <Compile Include="UnitTests\Entities\UserEntity\UpdateFromUserModelTests.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\ExecuteSqlAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadAllEntitiesAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadEntitiesBySqlQueryAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadEntityAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\LoadValueBySqlQueryAsyncTests.cs" />
     <Compile Include="UnitTests\Base\BaseUnitTest.cs" />
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\SaveEntityAsyncTests.cs" />
+    <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\LoadAllUserModelsAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\LoadUserModelAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\SaveUserModelAsyncTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\HandleErrorTests.cs" />
@@ -112,7 +115,9 @@
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsActiveTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsAppearingTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsDisappearingTests.cs" />
-    <Compile Include="UnitTests\ViewModels\WelcomeViewModel\ConstructorTests.cs" />
+    <Compile Include="UnitTests\ViewModels\User\ListUsersViewModel\LoadDataCommandTests.cs" />
+    <Compile Include="UnitTests\ViewModels\User\ListUsersViewModel\StartTests.cs" />
+    <Compile Include="UnitTests\ViewModels\User\ViewElements\ToStringTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvvmCrossTemplate.Core\MvvmCrossTemplate.Core.csproj">

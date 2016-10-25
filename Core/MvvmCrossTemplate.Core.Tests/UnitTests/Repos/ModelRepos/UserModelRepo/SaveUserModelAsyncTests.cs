@@ -6,6 +6,7 @@ using MvvmCrossTemplate.Core.Tests.Builders.Models.User;
 using MvvmCrossTemplate.Core.Tests.Builders.Repos.Models;
 using MvvmCrossTemplate.Core.Tests.UnitTests.Base;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.Utils.Enums;
 using NUnit.Framework;
 
 namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
@@ -23,7 +24,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
             var sut = builder.Create();
 
             //Act
-            await sut.SaveUserModelAsync(new UserModelBuilder().Create());
+            await sut.SaveUserModelAsync(CancelToken, new UserModelBuilder().Create());
 
             //Assert
             builder.MockUserEntityRepo.Verify(x => x.SaveEntityAsync(It.Is<UserEntity>(
@@ -49,7 +50,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
             var sut = builder.Create();
 
             //Act
-            await sut.SaveUserModelAsync(userModel);
+            await sut.SaveUserModelAsync(CancelToken, userModel);
 
             //Assert
             builder.MockUserEntityRepo.Verify(x => x.SaveEntityAsync(It.Is<UserEntity>(
@@ -75,7 +76,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
             var sut = builder.Create();
 
             //Act
-            await sut.SaveUserModelAsync(userModel);
+            await sut.SaveUserModelAsync(CancelToken, userModel);
 
             //Assert
             builder.MockUserEntityRepo.Verify(x => x.SaveEntityAsync(It.Is<UserEntity>(
@@ -94,12 +95,10 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
             var sut = builder.Create();
 
             //Act
-            var result = await sut.SaveUserModelAsync(userModel);
+            var result = await sut.SaveUserModelAsync(CancelToken, userModel);
 
             //Assert
             Assert.That(result.Error.SourceError.ClassName, Is.EqualTo("oops"));
-
-
         }
 
         [Test]
@@ -113,11 +112,26 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.ModelRepos.UserModelRepo
             var sut = builder.Create();
 
             //Act
-            var result = await sut.SaveUserModelAsync(userModel);
+            var result = await sut.SaveUserModelAsync(CancelToken, userModel);
 
             //Assert
             Assert.That(result.Error.SourceError.ClassName, Is.EqualTo("oops"));
+        }
 
+        [Test]
+        public async Task IF_token_is_cancelled_SHOULD_return_Cancel_error()
+        {
+            //Arrange
+            var userModel = new UserModelBuilder()
+                .Create();
+            var sut = new UserModelRepoBuilder().Create();
+            TestCancellationTokenSource.Cancel();
+
+            //Act
+            var result = await sut.SaveUserModelAsync(CancelToken, userModel);
+
+            //Assert
+            Assert.That(result.Error.ErrorType, Is.EqualTo(ErrorType.Cancelled));
         }
     }
 }

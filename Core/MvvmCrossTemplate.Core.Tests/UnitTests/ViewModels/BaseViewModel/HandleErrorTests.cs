@@ -1,4 +1,5 @@
 ﻿using MvvmCrossTemplate.Core.Tests.Builders.ViewModels;
+using MvvmCrossTemplate.Core.Tests.Builders.ViewModels.User;
 using MvvmCrossTemplate.Core.Tests.UnitTests.Base;
 using MvvmCrossTemplate.Core.Utils;
 using MvvmCrossTemplate.Core.Utils.Enums;
@@ -14,7 +15,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
         public void SHOULD_LogError()
         {
             //Arrange
-            var originalErrorSender = new WelcomeViewModelBuilder().Create();
+            var originalErrorSender = new ListUsersViewModelBuilder().Create();
             var error = Error.Create(originalErrorSender, ErrorType.Crash);
             var sut = (BaseViewModelBuilder.Instance) new BaseViewModelBuilder().Create();
 
@@ -29,7 +30,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
         public void SHOULD_Update_error_before_logging_it()
         {
             //Arrange
-            var originalErrorSender = new WelcomeViewModelBuilder().Create();
+            var originalErrorSender = new ListUsersViewModelBuilder().Create();
             var newSender = new ErrorViewModel();
             var error = Error.Create(originalErrorSender, ErrorType.Crash);
             var sut = (BaseViewModelBuilder.Instance)new BaseViewModelBuilder().Create();
@@ -45,7 +46,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
         public void SHOULD_ShowError()
         {
             //Arrange
-            var originalErrorSender = new WelcomeViewModelBuilder().Create();
+            var originalErrorSender = new ListUsersViewModelBuilder().Create();
             var error = Error.Create(originalErrorSender, ErrorType.Crash);
             var sut = (BaseViewModelBuilder.Instance)new BaseViewModelBuilder().Create();
 
@@ -60,7 +61,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.ViewModels.BaseViewModel
         public void SHOULD_Update_error_before_showing_it()
         {
             //Arrange
-            var originalErrorSender = new WelcomeViewModelBuilder().Create();
+            var originalErrorSender = new ListUsersViewModelBuilder().Create();
             var newSender = new ErrorViewModel();
             var error = Error.Create(originalErrorSender, ErrorType.Crash);
             var sut = (BaseViewModelBuilder.Instance)new BaseViewModelBuilder().Create();

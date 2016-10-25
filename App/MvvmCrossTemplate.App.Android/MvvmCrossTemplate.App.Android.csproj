@@ -124,7 +124,6 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Splash.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
-    <Compile Include="Views\WelcomeView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,11 +131,6 @@
     <None Include="packages.config" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Splash.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\WelcomeView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
