@@ -64,6 +64,7 @@
     <Compile Include="Utils\Error.cs" />
     <Compile Include="Utils\Result.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Error\ErrorViewModel.cs" />
     <Compile Include="ViewModels\User\ListUsersViewModel.cs" />
     <Compile Include="ViewModels\WelcomeViewModel.cs" />
   </ItemGroup>

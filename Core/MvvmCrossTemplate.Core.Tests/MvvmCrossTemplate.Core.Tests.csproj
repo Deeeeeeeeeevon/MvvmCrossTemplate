@@ -58,6 +58,10 @@
       <HintPath>..\..\packages\MvvmCross.Platform.4.3.0\lib\net45\MvvmCross.Platform.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MvvmCross.Test.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MvvmCross.Tests.4.3.0\lib\net45\MvvmCross.Test.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MvvmCross.Wpf, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Core.4.3.0\lib\net45\MvvmCross.Wpf.dll</HintPath>
       <Private>True</Private>
@@ -86,6 +90,7 @@
     <Compile Include="Builders\Utils\ResultOfTypeBuilder.cs" />
     <Compile Include="Builders\ViewModels\BaseViewModelBuilder.cs" />
     <Compile Include="Builders\ViewModels\WelcomeViewModelBuilder.cs" />
+    <Compile Include="Helpers\MockMvxViewDispatcher.cs" />
     <Compile Include="Helpers\RandomValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\Entities\UserEntity\InitialiseFromUserModelTests.cs" />
@@ -98,9 +103,12 @@
     <Compile Include="UnitTests\Repos\EntityRepos\BaseEntityRepo\SaveEntityAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\LoadUserModelAsyncTests.cs" />
     <Compile Include="UnitTests\Repos\ModelRepos\UserModelRepo\SaveUserModelAsyncTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\HandleErrorTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\IsBusyTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\FinishLoadingTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\ShowErrorTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\StartLoadingTests.cs" />
+    <Compile Include="UnitTests\ViewModels\BaseViewModel\UpdateAllViewElementsTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsActiveTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsAppearingTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsDisappearingTests.cs" />

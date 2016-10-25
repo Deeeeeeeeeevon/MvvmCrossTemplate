@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using MvvmCrossTemplate.Core.Tests.Builders.Base;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.Utils.Attributes;
 using MvvmCrossTemplate.Core.ViewModels.Base;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModels
@@ -58,6 +59,25 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModels
                 UpdateAllViewElementsCalls++;
                 base.UpdateAllViewElements();
             }
+
+            public Error LoggedError { get; set; }
+            public override void LogError(Error error)
+            {
+                LoggedError = error;
+                base.LogError(error);
+            }
+
+            public Error ShownError { get; set; }
+            public override void ShowError(Error error)
+            {
+                ShownError = error;
+                base.ShowError(error);
+            }
+
+            [ViewElement]
+            public string TestViewElement { get; set; }
+
+            public string TestNonViewElement { get; set; }
 
         }
 

@@ -1,13 +1,17 @@
-﻿using System;
+﻿using MvvmCross.Core.Platform;
+using MvvmCross.Core.Views;
+using MvvmCross.Platform.Core;
+using MvvmCross.Test.Core;
 using MvvmCrossTemplate.Core.Tests.Builders.Utils;
+using MvvmCrossTemplate.Core.Tests.Helpers;
 using MvvmCrossTemplate.Core.Utils;
 using MvvmCrossTemplate.Core.Utils.Enums;
 using Ploeh.AutoFixture;
-using static MvvmCrossTemplate.Core.Tests.Helpers.RandomValues;
+using NUnit.Framework;
 
 namespace MvvmCrossTemplate.Core.Tests.UnitTests.Base
 {
-    public class BaseUnitTest
+    public class BaseUnitTest : MvxIoCSupportingTest
     {
 
         public BaseUnitTest()
@@ -15,6 +19,17 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Base
             MyFixture = new Fixture();
         }
 
+        [SetUp]
+        public virtual void Start()
+        {
+            ClearAll();
+            MockViewDispatcher = new MockMvxViewDispatcher();
+            Ioc.RegisterSingleton<IMvxMainThreadDispatcher>(MockViewDispatcher);
+            Ioc.RegisterSingleton<IMvxViewDispatcher>(MockViewDispatcher);
+            Ioc.RegisterSingleton<IMvxStringToTypeParser>(new MvxStringToTypeParser());
+        }
+
+        internal MockMvxViewDispatcher MockViewDispatcher;
         internal Fixture MyFixture;
 
         internal Result<T> FailResult<T>(string className) => new ResultOfTypeBuilder<T>().With_Error_ClassName(className).Create();
