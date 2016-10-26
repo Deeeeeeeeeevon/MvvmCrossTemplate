@@ -6,7 +6,7 @@ using MvvmCrossTemplate.Core.ViewModels.Base;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModels
 {
-    public class BaseViewModelBuilder : BaseBuilder<BaseViewModel>
+    public class BaseViewModelBuilder : BaseServiceBuilder<BaseViewModel>
     {
         public override BaseViewModel Create()
         {

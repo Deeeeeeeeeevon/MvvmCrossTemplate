@@ -13,12 +13,14 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Models.User
         private IPersonalDetails _personalDetails;
         private EntityId _entityId;
         public Mock<IUserModel> MockUserModel;
+        private Result _updateResult;
 
         public UserModelBuilder()
         {
             MockUserModel = new Mock<IUserModel>();
             _personalDetails = new PersonalDetailsBuilder().CreateMock();
             _entityId = new EntityIdBuilder().Create();
+            _updateResult = Result.Ok();
         }
 
         public override UserModel Create()
@@ -42,7 +44,14 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.Models.User
         {
             MockUserModel.SetupGet(x => x.EntityId).Returns(_entityId);
             MockUserModel.SetupGet(x => x.PersonalDetails).Returns(_personalDetails);
+            MockUserModel.Setup(x => x.UpdateUserName(It.IsAny<string>(), It.IsAny<string>())).Returns(_updateResult);
             return MockUserModel.Object;
+        }
+
+        public UserModelBuilder Where_UpdateUserName_returns(Result result)
+        {
+            _updateResult = result;
+            return this;
         }
     }
 }

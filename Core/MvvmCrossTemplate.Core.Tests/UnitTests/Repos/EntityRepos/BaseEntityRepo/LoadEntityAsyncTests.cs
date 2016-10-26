@@ -53,7 +53,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.EntityRepos.BaseEntityRep
             var sut = builder.Create();
 
             //Act
-            var result = await sut.LoadEntityAsync(new EntityIdBuilder().Create());
+            var result = await sut.LoadEntityAsync(new EntityIdBuilder().With_Ids().Create());
 
             //Assert
             Assert.That(result.IsFailure);

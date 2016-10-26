@@ -7,7 +7,7 @@ using MvvmCrossTemplate.Core.Utils;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.Repos.Models
 {
-    public class UserModelRepoBuilder : BaseBuilder<IUserModelRepo>
+    public class UserModelRepoBuilder : BaseServiceBuilder<IUserModelRepo>
     {
         public override IUserModelRepo Create()
         {

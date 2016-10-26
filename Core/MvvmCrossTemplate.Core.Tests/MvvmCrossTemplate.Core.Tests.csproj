@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builders\Base\BaseBuilder.cs" />
+    <Compile Include="Builders\Base\BaseServiceBuilder.cs" />
     <Compile Include="Builders\Entities\BaseEntityBuilder.cs" />
     <Compile Include="Builders\Entities\UserEntityBuilder.cs" />
     <Compile Include="Builders\Models\User\PersonalDetailsBuilder.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Builders\Utils\ResultBuilder.cs" />
     <Compile Include="Builders\Utils\ResultOfTypeBuilder.cs" />
     <Compile Include="Builders\ViewModels\BaseViewModelBuilder.cs" />
+    <Compile Include="Builders\ViewModels\User\CreateUserViewModelBuilder.cs" />
     <Compile Include="Builders\ViewModels\User\ListUsersViewModelBuilder.cs" />
     <Compile Include="Builders\ViewModels\User\ViewElements\UserListItemViewElementBuilder.cs" />
     <Compile Include="Helpers\MockMvxViewDispatcher.cs" />
@@ -115,6 +117,7 @@
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsActiveTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsAppearingTests.cs" />
     <Compile Include="UnitTests\ViewModels\BaseViewModel\ViewIsDisappearingTests.cs" />
+    <Compile Include="UnitTests\ViewModels\User\CreateUserViewModel\CreateUserCommandTests.cs" />
     <Compile Include="UnitTests\ViewModels\User\ListUsersViewModel\LoadDataCommandTests.cs" />
     <Compile Include="UnitTests\ViewModels\User\ListUsersViewModel\StartTests.cs" />
     <Compile Include="UnitTests\ViewModels\User\ViewElements\ToStringTests.cs" />

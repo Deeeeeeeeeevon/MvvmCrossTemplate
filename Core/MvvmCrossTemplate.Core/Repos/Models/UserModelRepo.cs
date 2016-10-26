@@ -19,6 +19,11 @@ namespace MvvmCrossTemplate.Core.Repos.Models
             _userEntityRepo = userEntityRepo;
         }
 
+        IUserModel IUserModelRepo.CreateNewUserModel()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public async Task<Result<IUserModel>> LoadUserModelAsync(CancellationToken cancelToken, EntityId userEntityId)
         {
             if (cancelToken.IsCancellationRequested)

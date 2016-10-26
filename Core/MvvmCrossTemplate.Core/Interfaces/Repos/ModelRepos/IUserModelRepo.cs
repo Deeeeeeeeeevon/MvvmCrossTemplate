@@ -8,6 +8,8 @@ namespace MvvmCrossTemplate.Core.Interfaces.Repos.ModelRepos
 {
     public interface IUserModelRepo
     {
+        IUserModel CreateNewUserModel();
+
         Task<Result<IUserModel>> LoadUserModelAsync(CancellationToken cancelToken, EntityId entityId);
         Task<Result<List<IUserModel>>> LoadAllUserModelsAsync(CancellationToken cancelToken);
 

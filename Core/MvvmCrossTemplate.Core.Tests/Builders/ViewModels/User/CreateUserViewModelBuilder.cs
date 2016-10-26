@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
+using MvvmCrossTemplate.Core.Interfaces.Models.User;
 using MvvmCrossTemplate.Core.Interfaces.Repos.ModelRepos;
 using MvvmCrossTemplate.Core.Models.User;
 using MvvmCrossTemplate.Core.Tests.Builders.Base;
@@ -10,9 +11,9 @@ using MvvmCrossTemplate.Core.ViewModels.User;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModels.User
 {
-    public class ListUsersViewModelBuilder : BaseServiceBuilder<ListUsersViewModel>
+    public class CreateUserViewModelBuilder : BaseServiceBuilder<CreateUserViewModel>
     {
-        public override ListUsersViewModel Create()
+        public override CreateUserViewModel Create()
         {
             return new Instance(MockUserModelRepo.Object);
         }
@@ -20,7 +21,7 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModels.User
 
         #region Instance
 
-        public class Instance : ListUsersViewModel
+        public class Instance : CreateUserViewModel
         {
             public Instance(IUserModelRepo userModelRepo) : base(userModelRepo)
             {
@@ -72,16 +73,6 @@ namespace MvvmCrossTemplate.Core.Tests.Builders.ViewModels.User
                 base.UpdateAllViewElements();
             }
             
-            public int LoadDataCommandCalls { get; set; }
-
-            public override ICommand LoadDataCommand
-            {
-                get
-                {
-                    LoadDataCommandCalls++;
-                    return base.LoadDataCommand;
-                }
-            }
         }
 
         #endregion

@@ -6,7 +6,7 @@ using MvvmCrossTemplate.Core.Utils;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.Repos.Entities
 {
-    public class BaseEntityRepoBuilder : BaseBuilder<BaseEntityRepo<BaseEntity>>
+    public class BaseEntityRepoBuilder : BaseServiceBuilder<BaseEntityRepo<BaseEntity>>
     {
         
 

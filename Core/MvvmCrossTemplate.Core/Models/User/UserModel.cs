@@ -13,5 +13,11 @@ namespace MvvmCrossTemplate.Core.Models.User
 
         public EntityId EntityId { get; }
         public IPersonalDetails PersonalDetails { get; }
+
+        public Result UpdateUserName(string firstName, string lastName)
+        {
+            return Result.Ok();
+
+        }
     }
 }
