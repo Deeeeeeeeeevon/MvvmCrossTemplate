@@ -3,6 +3,7 @@
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "MvvmCross": "4.3.0",
     "MvvmCross.Plugin.SQLitePCL": "4.2.3",
+    "PCLStorage": "1.0.2",
     "sqlite": "3.13.0",
     "Xam.Plugin.Connectivity": "2.2.12"
   },

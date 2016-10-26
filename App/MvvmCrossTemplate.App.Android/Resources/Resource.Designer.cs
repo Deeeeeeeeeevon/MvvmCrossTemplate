@@ -49,6 +49,8 @@ namespace MvvmCrossTemplate.Android
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxListView_MvxItemTemplate;
 			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resource.String.ApplicationName;
 			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resource.String.Hello;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resource.String.Hello;
 		}

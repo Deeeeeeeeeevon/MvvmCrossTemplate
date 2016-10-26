@@ -13,7 +13,8 @@ namespace MvvmCrossTemplate.Core
             CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
             CreatableTypes().EndingWith("Repo").AsInterfaces().RegisterAsLazySingleton();
             RegisterAppStart<ListUsersViewModel>();
-            
+            var x = Mvx.Resolve<IStorageService>();
+
         }
 
     }
