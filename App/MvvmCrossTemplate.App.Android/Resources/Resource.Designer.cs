@@ -47,6 +47,12 @@ namespace MvvmCrossTemplate.Android
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MvvmCrossTemplate.Android.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resource.String.ApplicationName;
+			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resource.String.Hello;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MvvmCrossTemplate.Android.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::MvvmCrossTemplate.Android.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -102,11 +108,11 @@ namespace MvvmCrossTemplate.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int MvvmCrossTagId = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int MvvmCrossTagId = 2131034112;
 			
-			// aapt resource value: 0x7f040001
-			public const int MvxBindingTagUnique = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int MvxBindingTagUnique = 2131034113;
 			
 			static Id()
 			{
@@ -124,9 +130,6 @@ namespace MvvmCrossTemplate.Android
 			// aapt resource value: 0x7f030000
 			public const int Splash = 2130903040;
 			
-			// aapt resource value: 0x7f030001
-			public const int WelcomeView = 2130903041;
-			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -140,11 +143,11 @@ namespace MvvmCrossTemplate.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f040001
+			public const int ApplicationName = 2130968577;
 			
-			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			// aapt resource value: 0x7f040000
+			public const int Hello = 2130968576;
 			
 			static String()
 			{

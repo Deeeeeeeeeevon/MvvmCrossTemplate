@@ -43,13 +43,17 @@ namespace MvvmCrossTemplate.Windows
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
+                Window.Current.Content = rootFrame;
+            }
+
+
+            if (rootFrame.Content == null)
+            {
                 var setup = new Setup(rootFrame);
                 setup.Initialize();
 
                 var start = Mvx.Resolve<IMvxAppStart>();
                 start.Start();
-
-                Window.Current.Content = rootFrame;
             }
 
             //show and handle back button
