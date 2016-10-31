@@ -5,6 +5,7 @@ using MvvmCrossTemplate.Core.Models.User;
 using MvvmCrossTemplate.Core.Tests.Builders.Base;
 using MvvmCrossTemplate.Core.Tests.Builders.Utils;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.Models.User
 {

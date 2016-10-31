@@ -1,4 +1,5 @@
 ﻿using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 
 namespace MvvmCrossTemplate.Core.Interfaces.Models.Generic
 {

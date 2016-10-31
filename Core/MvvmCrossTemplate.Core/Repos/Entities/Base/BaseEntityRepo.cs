@@ -9,6 +9,7 @@ using MvvmCrossTemplate.Core.Interfaces.Repos.EntityRepos.Base;
 using MvvmCrossTemplate.Core.Interfaces.Services;
 using MvvmCrossTemplate.Core.Utils;
 using MvvmCrossTemplate.Core.Utils.Enums;
+using MvvmCrossTemplate.Core.ValueObjects;
 
 namespace MvvmCrossTemplate.Core.Repos.Entities.Base
 {
@@ -27,7 +28,7 @@ namespace MvvmCrossTemplate.Core.Repos.Entities.Base
 
         public async Task<Result<TEntity>> LoadEntityAsync(EntityId entityId)
         {
-            if (entityId.IsEmpty())
+            if (entityId.IsEmpty)
             {
                 return Result.Fail<TEntity>(this, ErrorType.NotFound);
             }
@@ -48,11 +49,11 @@ namespace MvvmCrossTemplate.Core.Repos.Entities.Base
             }
             if (result.Value.Count > 1)
             {
-                return Result.Fail<TEntity>(this, ErrorType.DuplicateResults).AddData("entityId", entityId.FullId);
+                return Result.Fail<TEntity>(this, ErrorType.DuplicateResults).AddData("entityId", entityId.ToString());
             }
             if (result.Value.Count == 0)
             {
-                return Result.Fail<TEntity>(this, ErrorType.NotFound).AddData("entityId", entityId.FullId);
+                return Result.Fail<TEntity>(this, ErrorType.NotFound).AddData("entityId", entityId.ToString());
             }
             return Result.Ok(result.Value.First());
         }
@@ -63,7 +64,7 @@ namespace MvvmCrossTemplate.Core.Repos.Entities.Base
 
             if (loadResult.IsFailure)
             {
-                if (entityToSave.EntityId.IsEmpty())
+                if (entityToSave.EntityId.IsEmpty)
                 {
                     entityToSave.UniqueId = Guid.NewGuid().ToString();
                 }

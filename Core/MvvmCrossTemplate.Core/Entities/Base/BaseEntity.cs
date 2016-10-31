@@ -1,4 +1,5 @@
 ﻿using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 using SQLite.Net.Attributes;
 
 namespace MvvmCrossTemplate.Core.Entities.Base

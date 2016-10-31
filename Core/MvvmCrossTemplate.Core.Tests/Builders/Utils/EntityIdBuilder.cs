@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MvvmCrossTemplate.Core.Tests.Builders.Base;
 using MvvmCrossTemplate.Core.Tests.Helpers;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.Utils
 {

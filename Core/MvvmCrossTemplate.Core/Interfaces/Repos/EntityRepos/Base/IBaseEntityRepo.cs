@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MvvmCrossTemplate.Core.Entities.Base;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 
 namespace MvvmCrossTemplate.Core.Interfaces.Repos.EntityRepos.Base
 {

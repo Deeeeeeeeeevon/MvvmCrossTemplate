@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MvvmCrossTemplate.Core.Interfaces.Models.User;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 
 namespace MvvmCrossTemplate.Core.Interfaces.Repos.ModelRepos
 {

@@ -11,6 +11,7 @@ using MvvmCrossTemplate.Core.Models.User;
 using MvvmCrossTemplate.Core.Tests.Builders.Entities;
 using MvvmCrossTemplate.Core.Tests.Builders.Models.User;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 using static MvvmCrossTemplate.Core.Tests.Helpers.RandomValues;
 
 namespace MvvmCrossTemplate.Core.Tests.Builders.Base

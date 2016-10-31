@@ -1,6 +1,7 @@
 ﻿using System;
 using MvvmCrossTemplate.Core.Tests.Builders.Utils;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 using Ploeh.AutoFixture;
 
 namespace MvvmCrossTemplate.Core.Tests.Helpers

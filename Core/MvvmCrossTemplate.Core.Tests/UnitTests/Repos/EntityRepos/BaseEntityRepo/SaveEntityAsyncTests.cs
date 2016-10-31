@@ -9,6 +9,7 @@ using MvvmCrossTemplate.Core.Tests.Builders.Utils;
 using MvvmCrossTemplate.Core.Tests.UnitTests.Base;
 using MvvmCrossTemplate.Core.Utils;
 using MvvmCrossTemplate.Core.Utils.Enums;
+using MvvmCrossTemplate.Core.ValueObjects;
 using NUnit.Framework;
 
 namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.EntityRepos.BaseEntityRepo

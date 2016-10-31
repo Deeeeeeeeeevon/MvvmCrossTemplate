@@ -7,6 +7,7 @@ using MvvmCrossTemplate.Core.Interfaces.Repos.ModelRepos;
 using MvvmCrossTemplate.Core.Models.User;
 using MvvmCrossTemplate.Core.Utils;
 using MvvmCrossTemplate.Core.Utils.Enums;
+using MvvmCrossTemplate.Core.ValueObjects;
 
 namespace MvvmCrossTemplate.Core.Repos.Models
 {
@@ -39,7 +40,7 @@ namespace MvvmCrossTemplate.Core.Repos.Models
             }
             var userEntity = userEntityResult.Value;
 
-            var entityId = new EntityId(userEntity);
+            var entityId = new EntityId(userEntity.ObjectId, userEntity.UniqueId, userEntity.LocalId);
             var personalDetails = new PersonalDetails(userEntity.FirstName, userEntity.LastName);
 
             var userModel = new UserModel(entityId, personalDetails);
@@ -63,7 +64,7 @@ namespace MvvmCrossTemplate.Core.Repos.Models
             var allUsers = new List<IUserModel>();
             foreach (var userEntity in loadUserEntitiesResult.Value)
             {
-                var entityId = new EntityId(userEntity);
+                var entityId = new EntityId(userEntity.ObjectId, userEntity.UniqueId, userEntity.LocalId);
                 var personalDetails = new PersonalDetails(userEntity.FirstName, userEntity.LastName);
                 allUsers.Add(new UserModel(entityId, personalDetails));
             }

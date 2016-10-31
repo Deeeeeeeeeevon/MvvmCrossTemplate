@@ -8,6 +8,7 @@ using MvvmCrossTemplate.Core.Tests.Builders.Utils;
 using MvvmCrossTemplate.Core.Tests.UnitTests.Base;
 using MvvmCrossTemplate.Core.Utils;
 using MvvmCrossTemplate.Core.Utils.Enums;
+using MvvmCrossTemplate.Core.ValueObjects;
 using NUnit.Framework;
 
 namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.EntityRepos.BaseEntityRepo
@@ -186,7 +187,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.EntityRepos.BaseEntityRep
             //Assert
             Assert.That(result.IsFailure);
             Assert.That(result.Error.ErrorType, Is.EqualTo(ErrorType.DuplicateResults));
-            Assert.That(result.Error.AdditionalData["entityId"], Is.EqualTo(entityId.FullId));
+            Assert.That(result.Error.AdditionalData["entityId"], Is.EqualTo(entityId.ToString()));
         }
 
         [Test]
@@ -206,7 +207,7 @@ namespace MvvmCrossTemplate.Core.Tests.UnitTests.Repos.EntityRepos.BaseEntityRep
             //Assert
             Assert.That(result.IsFailure);
             Assert.That(result.Error.ErrorType, Is.EqualTo(ErrorType.NotFound));
-            Assert.That(result.Error.AdditionalData["entityId"], Is.EqualTo(entityId.FullId));
+            Assert.That(result.Error.AdditionalData["entityId"], Is.EqualTo(entityId.ToString()));
         }
 
 

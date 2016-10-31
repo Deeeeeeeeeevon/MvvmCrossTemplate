@@ -6,6 +6,7 @@ using MvvmCrossTemplate.Core.Tests.Builders.Repos.Entities;
 using MvvmCrossTemplate.Core.Tests.Builders.Utils;
 using MvvmCrossTemplate.Core.Tests.UnitTests.Base;
 using MvvmCrossTemplate.Core.Utils;
+using MvvmCrossTemplate.Core.ValueObjects;
 using NUnit.Framework;
 using Ploeh.AutoFixture;
 
